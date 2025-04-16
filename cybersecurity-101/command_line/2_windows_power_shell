@@ -1,0 +1,102 @@
+# TryHackMe - Room Title
+
+**Date:** 10 April 2025 / 15 April 2025 (ear infecions are rough...) 
+**Room:**  Windows Power Shell
+**Level:** *Easy*  
+**Tags:** *Poweshell, CLI, Linux, Windows, OS*
+
+---
+
+## 🧩 Room Overview
+
+> The second room of the Command Line module. It is an introdutory room to PowerShell, the second - historically -
+> command-line utility built for the Windows OS.
+
+---
+
+## 🛠️ Tools Used
+
+- THM VMs, remmina, PowerShell
+
+---
+
+## 🚀 Step-by-Step Process
+
+### Task 1: [Introduction] 
+
+
+
+### Task 2: [What is PowerShell]
+1. Combines CLI and scripting language built on .NET framework
+2. object oriented
+3. object - item with properties (characteristics) and methods (actions) 
+
+### Task 3: [PowerShell Basics]
+1. using remmina to log on to target machine via ssh
+2. powershell can be started via command: powershell (in windows CLI - I am guessing after remmina remote login)
+3. PS C:\Users\... indicates PS
+4. Syntax of PS cmdlets (command-lets):
+ - Verb-Noun:
+	Get-Content
+	Set-Location
+	Get-Command - !! Lists all available cmdlets, functions, aliases and scripts that can be executed
+	Get-Help - info about cmdlets
+	"get-help #cmdlet# -examples" - provides examples
+	Get-Alias - lists all aliases available
+5. dir is alias for Get-ChildItem, cd is alias for Set-Location, echo - Write-Output
+6. Find-Module -Name "Powershell"
+	an example of how to download additional m
+
+
+### Task 4: [Navigating the File System and Working with Files]
+1. Linux ls			-> Get-ChildItem -Path		// path is optional
+2. Linux cd			-> Set-Location -Path
+3. Linux touch(?), mkdir	-> New-Item -Path ... -ItemType "Directory"  // Directory as one example
+4. Linux rm,rmdir,del		-> Remove-Item -Path
+5. Linux cp			-> Copy-Item -Path ... -Destination
+6. Linux mv			-> Move-Item -Path ... -Destination
+7. Linux cat(?)			-> Get-Content -Path // gets type of sth
+ 
+
+### Task 5: [Piping, Filtering, and Sorting Data]
+1. Piping: in command-line environments commands can be used as input for another. | is the symbol for that.
+eg Get-ChildItem | Sort-Object Length // list of files of directory and then sort them by size.
+
+	Get-ChildItem	- gets the object
+	|		- sends them to Sort-Object
+	Sort-Object	- sorts
+	Length		- Length
+
+- Where-Object - used to filter for specific type
+eg Get-ChildItem | Where-Object -Property "Extension" -eq ".txt"
+- Select-Object - used to select specific properties
+eg Get-ChildItem | Select-Object Name,Length
+
+### Task 6: [System and Network Information]
+1. Get-ComputerInfo		- information about machine and so
+2. Get-LocalUser		- lists local user accounts
+3. Get-NetIPConfiguration	- similar to ipconfig
+4. Get-NetIPAdress		- shows details for all configured IP addresses
+
+### Task 7: [Real-Time System Analysis]
+1. Get-Process			- provides detailed view of all running processes
+2. Get-Service			- status of services of machine, which are running, stopped, paused...
+3. Get-NetTCPConnection		- displays current TCP connections
+4. Get-FileHash			- generates file hashes (useful for incident response
+
+### Task 8: [Scripting]
+1. Invoke-Command		- essential for executing commands on remote system
+	- Invoke-Command -Computername ... -Credential ... - Scriptblock {...}
+	- ... can be left empty for Credential if no Credential needed
+
+---
+
+## 💡 Key Takeaways
+
+- learned to navigate filesystem and perform basic operations to create files and retrieve information on local and remote systems
+
+---
+
+## 🔗 Resources
+
+- https://tryhackme.com/room/windowspowershell

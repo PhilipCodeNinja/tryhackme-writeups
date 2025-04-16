@@ -1,0 +1,68 @@
+# TryHackMe - Room Title
+
+**Date:** 15 April 2025  
+**Room:**  Linux Shells
+**Level:** *(Easy)*  
+**Tags:** *linux shell*
+
+---
+
+## 🧩 Room Overview
+
+> Summary of what this room teaches or simulates.
+
+---
+
+## 🛠️ Tools Used
+
+- Example: Nmap, Burp Suite, netstat, Wireshark, etc.
+
+---
+
+## 🚀 Step-by-Step Process
+
+### Task 2: [How to Interact with a Shell]
+1. ls, cd, grep... basic stuff
+
+### Task 3: [Types of Linux Shells]
+1. zshell - switch by just typing zsh + ENTER
+2. Change default shell chsh -s /usr/bin/...      - ... = zsh, bash - shell name
+3. history		- displays command history
+
+Types:
+	Bourne Again SHell		- BASH
+	Z Shell				- ZSh
+	Friendly Interactive SHell	- FISH
+---
+
+### Task 4: [Shell Scripting and Components]
+- How to write a shell script
+Start with shebang:		#!/bin/bash
+echo				echo "sth"
+read				read var
+echo read			echo "$var"
+loop				for i in {1...10}
+				do
+				...
+				done
+if,elif,else			if [ cond ]; then
+					...
+				elif [ cond ]; then
+					...
+				else
+					...
+				fi
+
+### Task 5: [The Locker Script]
+- wrote a little script that applies the control structures learned above
+
+
+## 💡 Key Takeaways
+
+- blends well with previous coding experience. Cool that one can do this from the terminal
+
+---
+
+## 🔗 Resources
+
+- Link to relevant tools, articles, or THM room

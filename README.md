@@ -10,6 +10,6 @@ All walkthroughs focus on concepts, tools, and methodology. Furthermore, not all
 
 ## 📚 Contents (preliminary)
 
-- Cyber Security 101
+- Cyber Security 101 (folders, subfolders, write-ups follow naming of original course... 🧠)
 - Tools & Cheatsheets
 - Templates
